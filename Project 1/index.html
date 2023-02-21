@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/bf9003b136.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Unbounded&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="bg-light h-screen">
+  <div class="flex flex-col min-h-full">
+
+    <!-- Header -->
+    <header class="bg-tan shadow-xl"> 
+      <!-- Navigation -->
+      <nav class="md:mx-4">
+        <!-- Top Navigation -->
+        <div class="border-b-2 border-purple-300 md:mr-5">
+          <div class="flex h-16 items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="flex-shrink-0 ml-3 md:ml-5">
+                <a href="index.html" class="flex">
+                  <img class="w-8" src="assets/logo.png" alt="Your Company"> 
+                  <h1 class="flex items-center text-purple-300 ml-2 text-2xl">LR</h1> 
+                </a>
+              </div>
+            </div>      
+
+            <!-- Nav elements -->
+            <div class="hidden md:flex md:mr-5">
+              <ul class="flex">
+                <li class="mr-10">
+                  <a href="newEvent.html" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">New Event</a>
+                </li>
+                <li class="mr-10">
+                  <a href="#" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">Sign Up</a>
+                </li>
+                <li>
+                  <a href="#" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">Login</a>
+                </li>
+              </ul>   
+            </div>
+
+            <!-- Mobile Navigation Button -->
+            <div class="flex md:hidden mr-5">
+              <button class="nav-button" id="navOpen">
+                <i class="fa-solid fa-bars text-purple-300"></i>
+              </button>
+              <button class="nav-button" id="navClose">
+                <i class="fa-solid fa-xmark text-purple-300"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation -->
+          <div class="flex ml-3 mb-4" id="mobileNav"> 
+            <ul class="flex flex-col">
+              <li>
+                <a href="newEvent.html" class="text-slate-50 text-lg">New Event</a>
+              </li>
+              <li>
+                <a class="text-slate-50 text-lg">Sign Up</a>
+              </li>
+              <li>
+                <a class="text-slate-50 text-lg">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Site Navigation -->
+        <div class="flex justify-center py-2">
+          <a href="events.html">
+            <h1 class="text-slate-50 text-2xl p-2 rounded-full hover:bg-sky-200">Events</h1>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="container lg:max-w-5xl flex items-center grow flex-col md:flex-row text-center md:text-left mx-auto my-32 md:mt-0 md:mb-24 px-4">
+      <!-- Text Header -->
+      <div class="py-10 md:py-0 md:mr-12">
+        <strong class="text-5xl md:text-6xl">Let's Read Book Club</strong>
+      </div>
+      <!-- Text Content -->
+      <div class="md:ml-12">
+        <p class="serif text-2xl">Welcome to the Let's Read Book Club where you can read a variety of books with others!</p>
+        <br>
+        <p class="serif text-2xl">Go to the Events page to see upcoming events and find out more info!</p>
+        <br>
+        <!-- More Info Button -->
+        <div class="text-center pt-5">
+          <a href="events.html" class="bg-purple-200 rounded-full border border-slate-900 hover:bg-sky-200 p-5 px-10 mt-5">More Info!</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex items-center bg-tan h-12 bottom-0 w-full">
+      <div class="flex md:mx-4 w-full">
+        <!-- Copyright -->
+        <div class="flex items-center ml-3 md:ml-5 lg:w-2/12">
+          <h3 class="text-slate-50 text-xs md:text-lg mr-3 md:mr-10">&copy;Let's Read</h3>
+        </div>
+
+        <!-- More Info -->
+        <div class="flex grow items-center justify-center">
+          <div class="flex justify-end md:w-6/12">
+            <a href="#">
+              <h3 class="text-slate-50 text-sm md:text-lg hover:text-sky-200 mx-3">ABOUT</h3>
+            </a>
+          </div>
+          <div class="flex justify-start md:w-6/12">
+            <a href="#">
+              <h3 class="text-slate-50 text-sm md:text-lg hover:text-sky-200 mx-3">CONTACT</h3>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Socials -->
+        <div class="flex mx-3 md:mx-4 items-center justify-end lg:w-2/12">
+          <a href="#"><i class="fa-brands fa-instagram text-slate-50 fa-sm md:text-3xl mr-3 md:mx-5 hover:text-sky-200"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter text-slate-50 fa-sm md:text-3xl mr-3 md:mx-5 hover:text-sky-200"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook text-slate-50 fa-sm md:text-3xl md:mx-5 hover:text-sky-200"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+  <script src="assets/main.js"></script>  
+</body>
+</html>

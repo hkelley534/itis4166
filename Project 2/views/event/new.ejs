@@ -1,0 +1,67 @@
+<%- include('../partials/header.ejs') %>
+
+<!-- Main -->
+    <main class="container lg:max-w-4xl h-full mx-auto">
+      <!-- Text Header -->
+      <div class="flex justify-center my-12">
+        <strong class="text-slate-900 text-3xl text-center">Create a New Event!</strong>
+      </div>
+      
+      <div class="flex justify-center bg-sky-200 h-full mt-8 mb-32 border-y sm:border border-slate-900 shadow-xl sm:rounded-3xl">
+        <form class="grid gap-y-6 grid-rows-8 px-3 md:px-16 md:w-full" action="#">
+          <!-- Category -->
+          <div class="mt-5 bg-slate-200 rounded-lg p-3">
+            <label for="category" class="serif">Category</label>
+            <select name="category" id="category" class="w-full serif text-slate-700 bg-slate-50" required>
+              <option value="" hidden>Select category</option>
+              <option>Interest Meeting</option>
+              <option>Trade is War</option>
+              <option>Crying in H-Mart</option>
+              <option>Moby Dick</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Title -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="title" class="serif">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter title" class="w-full serif text-slate-700" required>
+          </div>
+
+          <!-- Description -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="description" class="serif">Description</label>
+            <textarea name="description" id="description" placeholder="Enter description" class="w-full serif text-slate-700" required></textarea>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="location" class="serif">Location</label>
+            <input type="text" name="location" id="location" placeholder="Enter location" class="w-full serif text-slate-700" required>
+          </div>
+          
+
+          <!-- Date -->
+          <div class="bg-slate-200 rounded-lg p-3 flex flex-col">
+            <label for="start" class="serif">Start Time</label>
+            <input type="datetime-local" name="start" id="start" class="w-full serif text-slate-700" required>
+            <label for="end" class="serif pt-5">End Time</label>
+            <input type="datetime-local" name="end" id="end" class="w-full serif text-slate-700" required>
+          </div>
+          
+          <!-- Image -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="image" class="serif">Image</label>
+            <input type="file" name="image" id="image" class="w-full serif" required>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex justify-center mb-5">
+            <input type="submit" value="Submit" class="font-bold py-2 px-5 md:px-16 rounded-full bg-slate-200 border border-slate-900 shadow-lg hover:bg-slate-50">
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

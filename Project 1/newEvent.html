@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Event</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/bf9003b136.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Unbounded&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="bg-light h-screen">
+  <div class="min-h-full">
+
+    <!-- Header -->
+    <header class="bg-tan shadow-xl"> 
+      <!-- Navigation -->
+      <nav class="md:mx-4">
+        <!-- Top Navigation -->
+        <div class="border-b-2 border-purple-300 md:mr-5">
+          <div class="flex h-16 items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="flex-shrink-0 ml-3 md:ml-5">
+                <a href="index.html" class="flex">
+                  <img class="w-8" src="assets/logo.png" alt="Your Company"> 
+                  <h1 class="flex items-center text-purple-300 ml-2 text-2xl">LR</h1> 
+                </a>
+              </div>
+            </div>      
+
+            <!-- Nav elements -->
+            <div class="hidden md:flex md:mr-5">
+              <ul class="flex">
+                <li class="mr-10">
+                  <a href="newEvent.html" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">New Event</a>
+                </li>
+                <li class="mr-10">
+                  <a href="#" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">Sign Up</a>
+                </li>
+                <li>
+                  <a href="#" class="text-slate-50 text-xl p-2 rounded-full hover:bg-sky-200">Login</a>
+                </li>
+              </ul>   
+            </div>
+
+            <!-- Mobile Navigation Button -->
+            <div class="flex md:hidden mr-5">
+              <button class="nav-button" id="navOpen">
+                <i class="fa-solid fa-bars text-purple-300"></i>
+              </button>
+              <button class="nav-button" id="navClose">
+                <i class="fa-solid fa-xmark text-purple-300"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation -->
+          <div class="flex ml-3 mb-4" id="mobileNav"> 
+            <ul class="flex flex-col">
+              <li>
+                <a href="newEvent.html" class="text-slate-50 text-lg">New Event</a>
+              </li>
+              <li>
+                <a class="text-slate-50 text-lg">Sign Up</a>
+              </li>
+              <li>
+                <a class="text-slate-50 text-lg">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Site Navigation -->
+        <div class="flex justify-center py-2">
+          <a href="events.html">
+            <h1 class="text-slate-50 text-2xl p-2 rounded-full hover:bg-sky-200">Events</h1>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <!-- Main -->
+    <main class="container lg:max-w-4xl h-full mx-auto">
+      <!-- Text Header -->
+      <div class="flex justify-center my-12">
+        <strong class="text-slate-900 text-3xl text-center">Create a New Event!</strong>
+      </div>
+      
+      <div class="flex justify-center bg-sky-200 h-full mt-8 mb-32 border-y sm:border border-slate-900 shadow-xl sm:rounded-3xl">
+        <form class="grid gap-y-6 grid-rows-8 px-3 md:px-16 md:w-full" action="#">
+          <!-- Category -->
+          <div class="mt-5 bg-slate-200 rounded-lg p-3">
+            <label for="category" class="serif">Category</label>
+            <select name="category" id="category" class="w-full serif text-slate-700 bg-slate-50" required>
+              <option value="" hidden>Select category</option>
+              <option>Interest Meeting</option>
+              <option>Trade is War</option>
+              <option>Crying in H-Mart</option>
+              <option>Moby Dick</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Title -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="title" class="serif">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter title" class="w-full serif text-slate-700" required>
+          </div>
+
+          <!-- Description -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="description" class="serif">Description</label>
+            <textarea name="description" id="description" placeholder="Enter description" class="w-full serif text-slate-700" required></textarea>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="location" class="serif">Location</label>
+            <input type="text" name="location" id="location" placeholder="Enter location" class="w-full serif text-slate-700" required>
+          </div>
+          
+
+          <!-- Date -->
+          <div class="bg-slate-200 rounded-lg p-3 flex flex-col">
+            <label for="start" class="serif">Start Time</label>
+            <input type="datetime-local" name="start" id="start" class="w-full serif text-slate-700" required>
+            <label for="end" class="serif pt-5">End Time</label>
+            <input type="datetime-local" name="end" id="end" class="w-full serif text-slate-700" required>
+          </div>
+          
+          <!-- Image -->
+          <div class="bg-slate-200 rounded-lg p-3">
+            <label for="image" class="serif">Image</label>
+            <input type="file" name="image" id="image" class="w-full serif" required>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex justify-center mb-5">
+            <input type="submit" value="Submit" class="font-bold py-2 px-5 md:px-16 rounded-full bg-slate-200 border border-slate-900 shadow-lg hover:bg-slate-50">
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex items-center bg-tan h-12 bottom-0 w-full">
+      <div class="flex md:mx-4 w-full">
+        <!-- Copyright -->
+        <div class="flex items-center ml-3 md:ml-5 lg:w-2/12">
+          <h3 class="text-slate-50 text-xs md:text-lg mr-3 md:mr-10">&copy;Let's Read</h3>
+        </div>
+
+        <!-- More Info -->
+        <div class="flex grow items-center justify-center">
+          <div class="flex justify-end md:w-6/12">
+            <a href="#">
+              <h3 class="text-slate-50 text-sm md:text-lg hover:text-sky-200 mx-3">ABOUT</h3>
+            </a>
+          </div>
+          <div class="flex justify-start md:w-6/12">
+            <a href="#">
+              <h3 class="text-slate-50 text-sm md:text-lg hover:text-sky-200 mx-3">CONTACT</h3>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Socials -->
+        <div class="flex mx-3 md:mx-4 items-center justify-end lg:w-2/12">
+          <a href="#"><i class="fa-brands fa-instagram text-slate-50 fa-sm md:text-3xl mr-3 md:mx-5 hover:text-sky-200"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter text-slate-50 fa-sm md:text-3xl mr-3 md:mx-5 hover:text-sky-200"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook text-slate-50 fa-sm md:text-3xl md:mx-5 hover:text-sky-200"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+  <script src="assets/main.js"></script>  
+</body>
+</html>
