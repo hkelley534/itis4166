@@ -1,44 +1,76 @@
 const { DateTime } = require('luxon');
 const {v4: uuidv4} = require('uuid');
-
-dt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
-
+const dt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
 const events = [
   {
-    id: '1',
-    title: 'My life at Charlotte',
-    author: 'Hunter Kelley',
-    content: 'Eveniet similique animi nam odio aspernatur repellat cum sit. Eveniet impedit ipsum eligendi. Dolore sit modi asperiores eveniet nobis corporis, voluptatum autem?', 
-    createdAt: dt
-  }, 
+    id: uuidv4(),
+    category: "Trade is War",
+    title: "Trade is War Meeting 1",
+    host: "Jacob Roder",
+    details: "oawnhgoaweghwoeig hweaogiwehgoaiwehg oawiegh woeghwaoegi hwaegoh awegoihw aegohawegohi",
+    location: "CHHS 380",
+    startTime: dt,
+    endTime: dt,
+    image: "/images/book.jpg",
+  },
+  {
+    id: uuidv4(),
+    category: "Interest Meeting",
+    title: "Dog",
+    host: 2,
+    details: 2,
+    location: 2,
+    startTime: 2,
+    endTime: 2,
+    image: "/",
+  },
+  {
+    id: uuidv4(),
+    category: "Trade is War",
+    title: "Trade is War Meeting 2",
+    host: 3,
+    details: 3,
+    location: 3,
+    startTime: 3,
+    endTime: 3,
+    image: "/images/book.jpg",
+  },
+  {
+    id: uuidv4(),
+    category: "Interest Meeting",
+    title: "Cat",
+    host: "John",
+    details: "oawnhgoaweghwoeig hweaogiwehgoaiwehg oawiegh woeghwaoegi hwaegoh awegoihw aegohawegohi",
+    location: "my house",
+    startTime: "2am",
+    endTime: "4am",
+    image: "/",
+  }
 ]
 
 exports.find = () => events;
 
-exports.findById = id => events.find(event=>event.id === id);
+exports.findById = id => events.find(event=>event.id===id);
+
+exports.categories = () => events.map(event => event.category).filter((value, index, self) => self.indexOf(value) === index).sort();
 
 exports.save = event => {
   event.id = uuidv4();
-  event.createdAt = dt;
   events.push(event)
 }
 
-exports.updateByID = (id, newevent) => {
-  let event = events.find(event=>event.id === id);;
-  if (event) {
-    event.title = newevent.title
-    event.content = newevent.content
-    return true;
-  } else {
-    return false;
-  }
+exports.updateByID = (id, newEvent) => {
+  let event = events.find(event=>event.id === id);
+  if (!event) return false;
+  Object.assign(event, newEvent)
+  return true;
 }
 
 exports.deleteById = id => {
-  let index = events.findIndex(event => event.id === id);
-  if (index === -1) {
-     return false;
-  }
+  let index = events.findIndex(event=>event.id === id);
+  if (index === -1) return false;
   events.splice(index, 1);
   return true;
 }
+
+

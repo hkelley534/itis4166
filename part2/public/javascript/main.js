@@ -9,7 +9,7 @@ function buildMobileNav() {
   $("#navClose").hide();
   
   // Toggles mobile navigation and buttons on click
-  $(".nav-button").click(function(event) {
+  $(".nav-button").click((event)=>{
     $("#mobileNav").toggle();
     $(".nav-button").toggle();
   });

@@ -23,7 +23,7 @@ app.use(methodOverride('_method'));
 app.use('/', mainRoutes)
 app.use('/events', eventRoutes);
 
-// Error Handling
+// error handling
 app.use((req, res, next) => {
   let err = new Error('The server cannot locate ' + req.url);
   err.status = 404;
@@ -32,11 +32,11 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   console.log(err.stack);
+  // If there is no other error throw error
   if (!err.status) {
     err.status = 500;
     err.message = ("Internal Server Error");
   }
-
   res.status(err.status);
   res.render('error', {error: err});
 })

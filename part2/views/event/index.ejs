@@ -1,39 +1,42 @@
 <%- include('../partials/header.ejs') %>
 
-<!-- Main -->
-<main class="container lg:max-w-5xl flex items-center grow flex-col mx-auto my-20 md:my-32 md:mt-12 md:mb-24 md:px-4">
-  <!-- Text Header -->
-  <h1 class="text-3xl pb-12">Upcoming Events</h1>
+    <!-- Main -->
+    <main class="container lg:max-w-5xl flex items-center grow flex-col mx-auto my-20 md:my-32 md:mt-12 md:mb-24 md:px-4">
+      <!-- Text Header -->
+      <h1 class="text-3xl pb-12">Upcoming Events</h1>
 
-  <div class="flex-col justify-center h-full bg-sky-200 p-5 w-full md:rounded-3xl border-y md:border border-slate-900 shadow-xl">
-    <div class="flex flex-col justify-center mx-auto bg-slate-50 border border-slate-900 rounded-lg shadow-lg">
-      <div class="flex justify-center border-b-2 border-slate-900 w-full">
-        <h1 class="text-3xl serif py-3">Interest Meetings</h1>
+      <!-- Categories Container -->
+      <div class="flex-col justify-center h-full bg-sky-200 px-8 w-full md:rounded-3xl border-y md:border border-slate-900 shadow-xl">
+
+      <!-- IF CATEGORIES EXISTS -->
+      <% if (data.categories.length) { %>
+          
+          <!-- FOR EACH CATEGORY IN CATEGORIES -->
+          <% data.categories.forEach(category=>{ %>
+            <!-- Category Container -->
+            <div class="flex flex-col justify-center mx-auto bg-white border-2 border-slate-300 rounded-lg shadow-lg my-8">
+              <!-- Category Title -->
+              <div class="flex justify-center border-b-2 border-slate-900 w-full">
+                <h1 class="text-3xl serif py-3"><%= category %></h1>
+              </div>
+
+              <!-- FOR EACH EVENT IN EVENTS -->
+              <% data.events.forEach(event=>{ %>
+                <% if (event.category === category) { %>
+                  <!-- Event -->
+                  <div class="flex flex-col p-3 space-y-8">
+                    <a href="/events/<%= event.id %>" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200"><%= event.title %></a> 
+                  </div>
+                <% } %>
+              <% }); %>
+            </div>
+          <% }); %>
+      <% } else { %>
+
+        <p class="text-center py-12 serif text-3xl">There are no events to display.</p>
+
+      <% } %>
       </div>
-      <div class="flex flex-col p-3 space-y-8">
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">"Spare" - Interest Meeting</a> 
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">"Trade is War" - Interest Meeting</a> 
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">"Crying in H-Mart" Interest Meeting</a> 
-
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-center mx-auto bg-slate-50 border border-slate-900 rounded-lg shadow-lg mt-14">
-      <div class="flex justify-center border-b-2 border-slate-900 w-full">
-        <h1 class="text-3xl serif py-3">Trade is War Reading</h1>
-      </div>
-      <div class="flex flex-col p-3 space-y-8">
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">Trade is War - Part 1</a> 
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">Trade is War - Part 2</a> 
-        <a href="event.html" class="text-xl text-slate-600 p-2 rounded-3xl hover:bg-purple-200">Trade is War - Part 3</a> 
-
-      </div>
-    </div>
-  </div>
-
-  
-
-
-</main>
+    </main>
 
     <%- include('../partials/footer.ejs') %>

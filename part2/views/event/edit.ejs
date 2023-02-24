@@ -1,0 +1,85 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main -->
+    <main class="container lg:max-w-7xl flex items-center grow flex-col md:flex-row mx-auto my-32 md:mt-12 md:mb-24 md:px-4">
+      
+      <!-- Edit Form -->
+      <form class="w-full" method="POST" action="/events/<%= event.id%>?_method=PUT">
+        <!-- Event Container -->
+        <div class="flex flex-col justify-center w-full bg-sky-200 border-y md:border border-slate-900 sm:rounded-3xl p-4 md:p-12 shadow-xl">
+          <div class="bg-white pt-8 md:p-8 md:rounded-xl">
+            <!-- Event Header -->
+            <div class="flex items-center justify-center">
+              <!-- Event Title -->
+              <div class="flex flex-col md:flex-row grow justify-center">
+                <label class="text-2xl md:text-3xl"><strong>Title: </strong></label>
+                <input type="text" class="ml-3 pl-1 border border-slate-400 pl-1 text-2xl md:text-3xl" name="title" value="<%= event.title %>"></input>
+              </div>
+            </div>
+
+            <!-- Event Info -->
+            <div class="flex flex-col md:flex-row mt-10 bg-slate-200 border-2 border-slate-300 shadow-lg rounded-xl p-5">
+              <!-- Image -->
+              <img src="<%= event.image %>" alt="<%= event.title %> Image" class="h-full rounded-xl shadow-lg border-slate-300 bg-slate-200">
+              
+              <!-- Event Text -->
+              <div class="grow flex flex-col justify-center space-y-10 mt-12 md:mt-0 p-6 md:ml-12 bg-slate-200 rounded-xl">
+                  <!-- Category -->
+                  <div class="flex">
+                    <label for="category" class="serif"><strong>Category: </strong></label>
+                    <select name="category" id="category" class="w-full serif text-slate-400 bg-white border border-slate-400 serif text-2xl grow ml-3 pl-1" value="<%= event.category %>">
+                      <option value="" hidden>Select category</option>
+                      <option>Interest Meeting</option>
+                      <option>Trade is War</option>
+                      <option>Crying in H-Mart</option>
+                      <option>Moby Dick</option>
+                      <option>Other</option>
+                    </select>  
+                  </div>
+
+                  <!-- Host -->
+                  <div class="flex">
+                    <label class="serif text-2xl"><strong>Host: </strong></label>
+                    <input type="text" class="serif text-2xl grow ml-3 pl-1 border border-slate-400" name="host" value="<%= event.host %>"></input>  
+                  </div>
+
+                  <!-- Details -->
+                  <div class="flex">
+                    <label class="serif text-2xl"><strong>Details: </strong></label>
+                    <textarea class="serif text-2xl grow ml-3 pl-1 border border-slate-400" name="details"><%= event.details %></textarea>  
+                  </div>
+                  
+                  <!-- Location -->
+                  <div class="flex">
+                    <label class="serif text-2xl"><strong>Location: </strong></label>
+                    <input type="text" class="serif text-2xl grow ml-3 pl-1 border border-slate-400" name="location" value="<%= event.location %>"></input>  
+                  </div>
+          
+                  <!-- Start Time -->
+                  <div class="flex">
+                    <label class="serif text-2xl"><strong>Start Time: </strong></label>
+                    <input type="datetime-local" class="serif text-2xl grow md:ml-3 pl-1 border border-slate-400" name="startTime" value="<%= event.startTime %>"></input>  
+                  </div>
+
+                  <!-- End Time -->
+                  <div class="flex">
+                    <label class="serif text-2xl"><strong>End Time: </strong></label>
+                    <input type="datetime-local" class="serif text-2xl grow md:ml-3 pl-1 border border-slate-400" name="endTime" value="<%= event.endTime %>"></input>  
+                  </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-center mt-8">
+              <button class="bg-purple-200 rounded-full border border-slate-500 hover:bg-sky-200 p-5 m-5 w-4/5 md:w-1/5 shadow-lg" type="submit">Submit</button>   
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+
+    
