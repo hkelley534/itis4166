@@ -4,9 +4,11 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mainRoutes = require('./routes/mainRoutes');
 const eventRoutes = require('./routes/eventRoutes');
+const { DateTime} = require('luxon');
 
 // create app
 const app = express();
+app.locals.DateTime = DateTime;
 
 // configure app
 let port = 3000;

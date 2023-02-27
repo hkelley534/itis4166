@@ -36,8 +36,8 @@
               <p class="serif text-2xl"><strong>Host: </strong><%= event.host %></p>
               <p class="serif text-2xl"><strong>Details: </strong><%= event.details %></p>
               <p class="serif text-2xl"><strong>Location: </strong><%= event.location %></p>
-              <p class="serif text-2xl"><strong>Start Time: </strong><%= event.startTime %></p>
-              <p class="serif text-2xl"><strong>End Time: </strong><%= event.endTime %></p>
+              <p class="serif text-2xl"><strong>Start Time: </strong><%= DateTime.fromISO(event.startTime).toLocaleString(DateTime.DATETIME_SHORT) %></p>
+              <p class="serif text-2xl"><strong>End Time: </strong><%= DateTime.fromISO(event.endTime).toLocaleString(DateTime.DATETIME_SHORT) %></p>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+const { DateTime } = require('luxon');
 const model = require('../models/event');
 
 exports.index = (req, res)=>{
@@ -19,7 +20,6 @@ exports.create = (req, res)=>{
 
 exports.show = (req, res, next)=>{
   let id = req.params.id;
-  console.log(id);
   let event = model.findById(id);
   // If event cannot be found throw error
   if (event) {
@@ -35,6 +35,7 @@ exports.show = (req, res, next)=>{
 exports.edit = (req, res, next)=>{
   let id = req.params.id;
   let event = model.findById(id);
+  console.log(event)
   // If event cannot be found throw error
   if (event) {
     res.render('./event/edit', {event});
@@ -48,7 +49,6 @@ exports.edit = (req, res, next)=>{
 // TODO
 exports.update = (req, res, next)=>{
   let event = req.body;
-  console.log(event);
   let id = req.params.id;
   // If event cannot be updated throw error
   if (model.updateByID(id, event)) {

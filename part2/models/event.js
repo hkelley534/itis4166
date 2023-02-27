@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon');
 const {v4: uuidv4} = require('uuid');
-const dt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
+const dt = DateTime.now().toISO();
 const events = [
   {
     id: uuidv4(),
@@ -10,7 +10,7 @@ const events = [
     details: "oawnhgoaweghwoeig hweaogiwehgoaiwehg oawiegh woeghwaoegi hwaegoh awegoihw aegohawegohi",
     location: "CHHS 380",
     startTime: dt,
-    endTime: dt,
+    endTime: dt ,
     image: "/images/book.jpg",
   },
   {
@@ -20,8 +20,8 @@ const events = [
     host: 2,
     details: 2,
     location: 2,
-    startTime: 2,
-    endTime: 2,
+    startTime: dt,
+    endTime: dt,
     image: "/",
   },
   {
@@ -31,8 +31,8 @@ const events = [
     host: 3,
     details: 3,
     location: 3,
-    startTime: 3,
-    endTime: 3,
+    startTime: dt,
+    endTime: dt,
     image: "/images/book.jpg",
   },
   {
@@ -42,8 +42,8 @@ const events = [
     host: "John",
     details: "oawnhgoaweghwoeig hweaogiwehgoaiwehg oawiegh woeghwaoegi hwaegoh awegoihw aegohawegohi",
     location: "my house",
-    startTime: "2am",
-    endTime: "4am",
+    startTime: dt,
+    endTime: dt,
     image: "/",
   }
 ]
