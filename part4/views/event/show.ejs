@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main -->
+    <main class="container lg:max-w-7xl flex items-center grow flex-col mx-auto my-32 md:mt-12 md:mb-24 md:px-4">
+      <!-- Event Container --> 
+      <div class="flex flex-col justify-center h-3/5 w-full bg-light border-y md:border border-slate-900 sm:rounded py-5 md:p-3 shadow-xl">
+        <div class="bg-white pt-8 md:p-8 border-y-2 sm:border-2 border-slate-300 rounded-xl shadow-lg">
+          <!-- Event Header -->
+          <div class="flex items-center justify-center">
+            <!-- Event Title -->
+            <div class="grow text-center">
+              <strong class="text-3xl"><%= event.title %></strong>
+            </div>
+          </div>
+
+          <!-- Event Info -->
+          <div class="flex flex-col md:flex-row mt-10 bg-slate-200 md:border-2 border-slate-300 shadow-lg py-8 md:p-5 md:rounded-xl ">
+            <!-- Image -->
+            <img src="<%= event.image %>" alt="<%= event.title %> Image" class="sm:rounded shadow-lg border-slate-300 bg-slate-200">
+
+            <!-- Event Text -->
+            <div class="grow flex flex-col justify-center space-y-10 mt-12 md:mt-0 md:ml-12 bg-slate-200 rounded-xl">
+              <p class="sans text-2xl"><strong>Host: </strong><%= event.host.firstName %> <%= event.host.lastName %></p>
+              <p class="sans text-2xl"><strong>Details: </strong><%= event.details %></p>
+              <p class="sans text-2xl"><strong>Location: </strong><%= event.location %></p>
+              <p class="sans text-2xl"><strong>Start Time: </strong><%= event.startTime %></p>
+              <p class="sans text-2xl"><strong>End Time: </strong><%= event.endTime %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+
+    

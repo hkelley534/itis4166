@@ -1,0 +1,44 @@
+
+<%- include('../partials/header.ejs')%>
+    <main class="container lg:max-w-4xl h-full mx-auto">
+      <!-- Container -->
+      <div class="flex justify-center bg-light h-full mt-12 mb-32 border-y sm:border border-slate-900 shadow-xl sm:rounded">
+        <div class="flex flex-col w-full justify-center bg-white h-full border-y-2 sm:border-2 border-slate-300 rounded-xl shadow-lg m-3">
+          <!-- Text Header -->
+          <div class="flex justify-center mt-12 mb-4">
+            <strong class="text-slate-900 text-3xl text-center">Welcome, <%=user.firstName%>!</strong>
+          </div>
+          <div class="text-center p-5">
+            <% if(events.length) { %>
+              <div class="flex flex-col justify-center bg-slate-200 w-full rounded-xl mx-auto md:border-2 border-slate-300 shadow-lg">
+                <h1 class="text-2xl p-2 mb-2 border-b border-slate-900">Your Events</h1>
+
+                <% events.forEach(event=>{ %>
+                  <div class="p-3 space-y-8">
+                    <div class="w-full flex text-center justify-center ">
+                      <div class="w-16 mr-3"></div>
+                      <a href="/events/<%= event.id %>" class="rounded-2xl hover-bg-blue o-70 sans text-xl p-2 grow"><%= event.title %></a> 
+                      <form class="flex justify-self-end w-16 ml-3">
+                        <!-- Edit -->
+                        <button type="submit" formmethod = "GET" formaction="/events/<%= event.id %>/edit?">
+                          <i class="fa-regular fa-pen-to-square text-green-500 hover:text-green-900 pr-3"></i>
+                        </button>
+          
+                        <!-- Delete -->
+                        <button type="submit" formmethod = "POST" formaction="/events/<%= event.id %>/?_method=DELETE">
+                          <i class="fa-solid fa-trash text-red-500 hover:text-red-900"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                <% }); %>
+              </div>
+            <% } else { %>
+                <p class="sans">You have not created any events</p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </main>          
+  </div>
+    <%- include('../partials/footer.ejs')%>

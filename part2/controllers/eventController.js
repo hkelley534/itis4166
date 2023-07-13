@@ -1,4 +1,3 @@
-const { DateTime } = require('luxon');
 const model = require('../models/event');
 
 exports.index = (req, res)=>{
@@ -31,7 +30,6 @@ exports.show = (req, res, next)=>{
   }
 }
 
-// TODO
 exports.edit = (req, res, next)=>{
   let id = req.params.id;
   let event = model.findById(id);
@@ -46,7 +44,6 @@ exports.edit = (req, res, next)=>{
   }
 }
 
-// TODO
 exports.update = (req, res, next)=>{
   let event = req.body;
   let id = req.params.id;

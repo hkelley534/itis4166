@@ -2,18 +2,25 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
+const { DateTime} = require('luxon');
 const mainRoutes = require('./routes/mainRoutes');
 const eventRoutes = require('./routes/eventRoutes');
-const { DateTime} = require('luxon');
 
 // create app
 const app = express();
-app.locals.DateTime = DateTime;
 
 // configure app
 let port = 3000;
 let host = 'localhost';
 app.set('view engine', 'ejs');
+app.locals.DateTime = DateTime;
+app.locals.options = [
+  "Interest Meeting",
+  "Trade is War",
+  "Crying in H-Mart",
+  "Les Misérables",
+  "Other"
+]
 
 // mount middleware
 app.use(express.static('public'));

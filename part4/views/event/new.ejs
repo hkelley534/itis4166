@@ -1,0 +1,75 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main -->
+    <main class="container lg:max-w-4xl h-full mx-auto">
+      <!-- Container -->
+      <div class="flex justify-center bg-light h-full mt-12 mb-32 border-y sm:border border-slate-900 shadow-xl sm:rounded">
+        <div class="flex flex-col justify-center bg-white h-full border-y-2 sm:border-2 border-slate-300 rounded-xl shadow-lg m-3">
+          <!-- Text Header -->
+          <div class="flex justify-center py-12 ">
+            <h1 class="text-3xl">Create a New Event!</h1>
+          </div>  
+  
+          <!-- Event Form -->
+          <form class="grid gap-y-3 grid-rows-8 mt-4 px-3 md:px-16 md:w-full" action='/events' method = 'POST' enctype="multipart/form-data">
+            <!-- Category -->
+            <div>
+              <label for="category" class="sans">Category</label>
+              <select name="category" id="category" class="w-full sans bg-slate-100 border border-slate-400 p-1" required>
+                <option value="" hidden>Select category</option>
+                <% categories.forEach(category => { %>
+                    <option><%= category %></option>
+                <% }) %>
+              </select>
+            </div>
+  
+            <!-- Title -->
+            <div>
+              <label for="title" class="sans">Title</label>
+              <input type="text" name="title" id="title" placeholder="Enter title" class="w-full bg-slate-100 sans border border-slate-400 p-1" required>
+            </div>
+            
+  
+            <!-- Details -->
+            <div>
+              <label for="details" class="sans">Details</label>
+              <textarea name="details" id="details" placeholder="Enter details" class="w-full bg-slate-100 sans border border-slate-400 p-1" required></textarea>
+            </div>
+            
+  
+            <!-- Location -->
+            <div>
+              <label for="location" class="sans">Location</label>
+              <input type="text" name="location" id="location" placeholder="Enter location" class="w-full sans bg-slate-100 border border-slate-400 p-1" required>
+            </div>
+            
+            
+  
+            <!-- Date -->
+            <div>
+              <label for="startTime" class="sans">Start Time</label>
+              <input type="datetime-local" name="startTime" id="startTime" class="w-full sans bg-slate-100 text-slate-400 border border-slate-400 p-1" required>
+              <label for="endTime" class="sans pt-5">End Time</label>
+              <input type="datetime-local" name="endTime" id="endTime" class="w-full sans bg-slate-100 text-slate-400 border border-slate-400 p-1" required>
+            </div>
+            
+            
+            <!-- Image -->
+            <div>
+              <label for="image" class="sans">Image</label>
+              <input type="file" name="image" id="image" class="w-full text-slate-400 sans py-2" required>
+            </div>
+            
+  
+            <!-- Submit -->
+            <div class="flex justify-center mb-5">
+              <input type="submit" value="Submit" class="bg-green py-2 px-5 md:px-16 rounded-full border border-slate-900 shadow-lg hover-bg-blue">
+            </div>
+  
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

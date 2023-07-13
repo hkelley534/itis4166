@@ -1,0 +1,71 @@
+<%- include('../partials/header.ejs') %>
+
+    <!-- Main -->
+    <main class="container lg:max-w-4xl h-full mx-auto">
+      <!-- Text Header -->
+      <div class="flex justify-center my-12">
+        <strong class="text-slate-900 text-3xl text-center">Create a New Event!</strong>
+      </div>
+      
+      <div class="flex justify-center bg-sky-200 h-full mt-8 mb-32 border-y sm:border border-slate-900 shadow-xl sm:rounded">
+        <form class="grid gap-y-6 grid-rows-8 px-3 md:px-16 md:w-full" action='/events' method = 'POST'>
+          <!-- Category -->
+          <div class="mt-5 bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="category" class="serif">Category</label>
+            <select name="category" id="category" class="w-full serif bg-white border border-slate-400 p-1 mt-1" required>
+              <option value="" hidden>Select category</option>
+              <% options.forEach(option => { %>
+                  <option><%= option %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <!-- Title -->
+          <div class="bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="title" class="serif">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter title" class="w-full serif border border-slate-400 p-1 mt-1" required>
+          </div>
+
+          <!-- Host -->
+          <div class="bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="host" class="serif">Host</label>
+            <input name="host" id="host" placeholder="Enter host name" class="w-full serif border border-slate-400 p-1 mt-1" required></input>
+          </div>
+
+          <!-- Details -->
+          <div class="bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="details" class="serif">Details</label>
+            <textarea name="details" id="details" placeholder="Enter details" class="w-full serif border border-slate-400 p-1 mt-1" required></textarea>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="location" class="serif">Location</label>
+            <input type="text" name="location" id="location" placeholder="Enter location" class="w-full serif border border-slate-400 p-1 mt-1" required>
+          </div>
+          
+
+          <!-- Date -->
+          <div class="bg-slate-200 rounded-xl p-5 flex flex-col border border-slate-300 shadow">
+            <label for="startTime" class="serif">Start Time</label>
+            <input type="datetime-local" name="startTime" id="startTime" class="w-full serif text-slate-400 border border-slate-400 p-1 mt-1" required>
+            <label for="endTime" class="serif pt-5">End Time</label>
+            <input type="datetime-local" name="endTime" id="endTime" class="w-full serif text-slate-400 border border-slate-400 p-1 mt-1" required>
+          </div>
+          
+          <!-- Image -->
+          <div class="bg-slate-200 rounded-xl p-5 border border-slate-300 shadow">
+            <label for="image" class="serif">Image</label>
+            <input type="file" name="image" id="image" class="w-full text-slate-400 serif py-2" required>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex justify-center mb-5">
+            <input type="submit" value="Submit" class="font-bold py-2 px-5 md:px-16 rounded-full bg-purple-200 border border-slate-900 shadow-lg hover:bg-slate-50">
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>

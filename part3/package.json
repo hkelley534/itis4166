@@ -1,0 +1,28 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "An express app using MVC architecture",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkelley534/itis4166-project1.git"
+  },
+  "author": "Hunter Kelley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkelley534/itis4166-project1/issues"
+  },
+  "homepage": "https://github.com/hkelley534/itis4166-project1#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "luxon": "^3.3.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}

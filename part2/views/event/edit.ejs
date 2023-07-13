@@ -6,7 +6,7 @@
       <!-- Edit Form -->
       <form class="w-full" method="POST" action="/events/<%= event.id%>?_method=PUT">
         <!-- Event Container -->
-        <div class="flex flex-col justify-center w-full bg-sky-200 border-y md:border border-slate-900 sm:rounded-3xl p-4 md:p-12 shadow-xl">
+        <div class="flex flex-col justify-center w-full bg-sky-200 border-y md:border border-slate-900 p-4 md:p-12 sm:rounded shadow-xl">
           <div class="bg-white pt-8 md:p-8 md:rounded-xl">
             <!-- Event Header -->
             <div class="flex items-center justify-center">
@@ -27,13 +27,14 @@
                   <!-- Category -->
                   <div class="flex">
                     <label for="category" class="serif"><strong>Category: </strong></label>
-                    <select name="category" id="category" class="w-full serif text-slate-400 bg-white border border-slate-400 serif text-2xl grow ml-3 pl-1" value="<%= event.category %>">
-                      <option value="" hidden>Select category</option>
-                      <option>Interest Meeting</option>
-                      <option>Trade is War</option>
-                      <option>Crying in H-Mart</option>
-                      <option>Moby Dick</option>
-                      <option>Other</option>
+                    <select name="category" id="category" class="w-full serif bg-white border border-slate-400 serif text-2xl grow ml-3 pl-1" value="<%= event.category %>">
+                      <% options.forEach(option => {
+                        if(option===event.category) { %>
+                          <option selected><%= option %></option>
+                        <% } else { %>
+                          <option><%= option %></option>
+                        <% }
+                      }) %>
                     </select>  
                   </div>
 

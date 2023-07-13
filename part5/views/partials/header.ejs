@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Read</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/bf9003b136.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=DM+Sans&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body class="bg-light h-screen">
+  <div class="flex flex-col min-h-full">
+
+    <!-- Header -->
+    <header class="bg-tan shadow-xl"> 
+      <!-- Navigation -->
+      <nav>
+        <!-- Top Navigation -->
+        <div class="border-b-2 border-yellow shadow-lg">
+          <div class="flex h-16 items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="flex-shrink-0 ml-5">
+                <a href="/" class="flex">
+                  <img class="logo" src="/images/logo.png" alt="Lets Read!"> 
+                </a>
+              </div>
+            </div>      
+
+            <!-- Nav elements -->
+            <div class="hidden md:flex md:mr-5">
+              <ul class="flex">
+                <% if(!user) { %>
+                <li class="mr-10">
+                  <a href="/users/new" class="text-white text-xl hover-blue">Sign Up</a>
+                </li>
+                <li class="mr-10">
+                  <a href="/users/login" class="text-white text-xl hover-blue">Login</a>
+                </li>
+                <% } else { %>
+                  <li class="mr-10 text-center">
+                    <a class="text-red text-xl"><%=user.firstName%></a>
+                  </li>
+                  <li class="mr-10">
+                    <a href="/users/profile" class="text-white text-xl hover-blue">Profile</a>
+                  </li>
+                  <li class="mr-10">
+                    <a href="/events/new" class="text-white text-xl hover-blue">New Event</a>
+                  </li>
+                  <li class="mr-10">
+                    <a href="/users/logout" class="text-white text-xl hover-blue">Logout</a>
+                  </li>
+                <% } %>
+              </ul>   
+            </div>
+
+            <!-- Mobile Navigation Button -->
+            <div class="flex md:hidden mr-5">
+              <button class="nav-button" id="navOpen">
+                <i class="fa-solid fa-bars text-purple-300 fa-xl"></i>
+              </button>
+              <button class="nav-button" id="navClose">
+                <i class="fa-solid fa-xmark text-purple-300 fa-xl"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation -->
+          <div class="flex ml-3 mb-4" id="mobileNav"> 
+            <ul class="flex flex-col">
+              <li>
+                <a href="/events/new" class="text-white text-lg">New Event</a>
+              </li>
+              <li>
+                <a class="text-white text-lg">Sign Up</a>
+              </li>
+              <li>
+                <a class="text-white text-lg">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Site Navigation -->
+        <div class="flex justify-center py-3">
+          <a href="/events/">
+            <h1 class="text-white hover-blue text-2xl">Events</h1>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <% if(errorMessages.length > 0) {%>
+      <div class="flex flex-col error lg:w-1/3 bg-red-200 self-center text-center rounded-b-full px-5 pb-3 pt-1">
+        <% errorMessages.forEach(message=>{%>
+          <p class="sans w-full"><%=message%></p>
+        <%});%>
+        <button onclick="closeErr()" class="sans align-right pr-3">&#10005</button>
+      </div>
+    <%}%>
+  
+    <% if(successMessages.length > 0) {%>
+      <div class="flex flex-col success lg:w-1/3 bg-green-200 self-center text-center rounded-b-full px-5 pb-3 pt-1">
+        <% successMessages.forEach(message=>{%>
+          <p class="sans w-full"><%=message%></p>
+        <%});%>
+        <button onclick="closeSuc()" class="sans align-right pr-3">&#10005</button>
+      </div>  
+    <%}%>

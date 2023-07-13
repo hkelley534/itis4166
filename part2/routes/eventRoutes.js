@@ -9,7 +9,7 @@ router.get('/', controller.index);
 // {GET /events/new} send html form for creating a new story
 router.get('/new', controller.new);
 
-// {POST /events} create a new story
+// {POST /events} 0create a new story
 router.post('/', controller.create);
 
 // {GET /events/:id} send details of story identified by id

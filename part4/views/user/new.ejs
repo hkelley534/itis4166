@@ -1,0 +1,39 @@
+
+<%- include('../partials/header.ejs')%>
+
+
+    <!-- Main -->
+    <main class="container lg:max-w-4xl mx-auto grow">
+      <div class="flex justify-center bg-light h-full mt-24 border-y sm:border border-slate-900 shadow-xl sm:rounded">
+        <div class="flex flex-col justify-center w-full bg-white border-2 border-slate-300 rounded-xl shadow-lg m-3">
+          <!-- Text Header -->
+          <div class="flex justify-center py-12">
+            <strong class="text-slate-900 text-3xl text-center">Sign Up</strong>
+          </div>
+          <div class="mx-24 mb-8">
+            <form action='/users' method='POST' class="flex flex-col gap-y-2">
+              <label class="sans" for="firstName">First Name</label>
+              <input class="sans bg-slate-100 rounded-xl p-1 border border-slate-300 shadow" type="text" id="firstName" name="firstName" required>
+                
+              <label class="sans" for="lastName">Last Name</label></td>
+              <input class="sans bg-slate-100 rounded-xl p-1 border border-slate-300 shadow" type="text" id="lastName" name="lastName" required></td>
+              
+              <label class="sans" for="email">Email Address</label>
+              <input class="sans bg-slate-100 rounded-xl p-1 border border-slate-300 shadow" type="email" id="email" name="email">
+              
+              <label class="sans" for="password">Password</label>
+              <input class="sans bg-slate-100 rounded-xl p-1 border border-slate-300 shadow" type="password" id="password" name="password" minlength="8" required>
+      
+              <div class="flex justify-center mt-6">
+                <input type="submit" value="Submit" class="bg-green py-2 px-5 md:px-16 rounded-full border border-slate-900 shadow-lg hover-bg-blue">
+              </div> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+    <%- include('../partials/footer.ejs')%>
+
+

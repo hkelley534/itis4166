@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.5rem;
+  font-family: 'BioRhyme', serif;
+  background-image: url('/images/background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+.bg-tan {
+  /* background-color: rgb(91, 93, 92); */
+  background-color: rgb(70, 57, 55);
+}
+
+.bg-light {
+  background-color: rgb(238, 232, 216);
+}
+
+.bg-green {
+  background-color: rgb(102, 182, 83) !important;
+}
+
+.bg-yellow {
+  background-color: #feb13f;
+}
+
+.border-yellow {
+  border-color: #feb13f;
+}
+
+.text-red {
+  color: #f73f3f;
+}
+
+.hover-blue:hover {
+  color: #55bac2 !important;
+}
+
+.hover-bg-blue:hover {
+  background-color: #55bac2 !important;
+  cursor: pointer;
+}
+
+.o-70 {
+  opacity: 70%;
+}
+
+.sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.logo {
+  height: 36px;
+}
+
+.home {
+  border-bottom-left-radius: 50% 38%;
+  border-bottom-right-radius: 50% 38%;
+  box-shadow: 0px 5px 10px grey;
+}

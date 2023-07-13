@@ -1,9 +1,13 @@
 <%- include('../partials/header.ejs') %>
 
     <!-- Main -->
-    <main class="container lg:max-w-7xl flex items-center grow flex-col md:flex-row mx-auto my-32 md:mt-12 md:mb-24 md:px-4">
+    <main class="container lg:max-w-7xl flex items-center grow flex-col mx-auto my-32 md:mt-12 md:mb-24 md:px-4">
+      
+      <!-- Category -->
+      <h1 class="text-4xl pb-12"><%= event.category %></h1>
+      
       <!-- Event Container --> 
-      <div class="flex flex-col justify-center w-full bg-sky-200 border-y md:border border-slate-900 sm:rounded-3xl py-5 md:p-12 shadow-xl">
+      <div class="flex flex-col justify-center h-3/5 w-full bg-sky-200 border-y md:border border-slate-900 sm:rounded py-5 md:p-12 shadow-xl">
         <div class="bg-white pt-8 md:p-8 md:rounded-xl">
           <!-- Event Header -->
           <div class="flex items-center justify-center">
@@ -29,7 +33,7 @@
           <!-- Event Info -->
           <div class="flex flex-col md:flex-row mt-10 bg-slate-200 md:border-2 border-slate-300 shadow-lg py-8 md:p-5 md:rounded-xl ">
             <!-- Image -->
-            <img src="<%= event.image %>" alt="<%= event.title %> Image" class="md:rounded-xl shadow-lg border-slate-300 bg-slate-200">
+            <img src="<%= event.image %>" alt="<%= event.title %> Image" class="sm:rounded shadow-lg border-slate-300 bg-slate-200">
 
             <!-- Event Text -->
             <div class="grow flex flex-col justify-center space-y-10 mt-12 md:mt-0 md:ml-12 bg-slate-200 rounded-xl">
